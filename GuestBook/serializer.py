@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from GuestBook.models import Comment
 
-class CommentListGetSerializer(serializers.ModelSerializer):
+class CommentSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Comment
@@ -11,4 +11,4 @@ class CommentCreateSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Comment
-        fields = ['comment']
+        fields = ['comment', 'create_date']

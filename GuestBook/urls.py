@@ -4,8 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    path('all/', views.get_comment_list),
-    path('create/', views.create_comment)
+    path('', views.comment)
 ]
 
 ##전체 정보 조회(req: {} -> res : {clubList : {...}})
