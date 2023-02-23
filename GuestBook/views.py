@@ -7,18 +7,6 @@ from .models import Comment
 
 @api_view(['GET', 'POST'])
 def comment(request):
-    print()
-    print()
-    print()
-    print()
-    print()
-    print()
-    print(request.method)
-    print()
-    print()
-    print()
-    print()
-    print()
     if request.method == "GET":
         comment_list = Comment.objects.all()
         
