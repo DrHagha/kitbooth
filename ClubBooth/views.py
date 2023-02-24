@@ -1,7 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework import status
-
+from rest_framework import status, viewsets
 from .serializer import BoothDetailSerializer, BoothShortSerializer
 from .models import Booth
 
@@ -23,3 +22,7 @@ def booth_detail(request, pk):
             serializer = BoothDetailSerializer(booth)
             print(pk)
             return Response(serializer.data, status=200)
+        
+class boothcreater(viewsets.ModelViewSet):
+    serializer_class = BoothDetailSerializer
+    queryset= Booth.objects.all()
