@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+from mysettings import my_AWS_ACCESS_KEY_ID, my_AWS_SECRET_ACCESS_KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -54,8 +55,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-AWS_ACCESS_KEY_ID = 'AKIA6BZET2ZQYANCEIE3' # .csv 파일에 있는 내용을 입력 Access key ID
-AWS_SECRET_ACCESS_KEY = 'xXvRFYSvFT4wucLPdZqquVTJHKcuEk6fdqfYANB7' # .csv 파일에 있는 내용을 입력 Secret access key
+AWS_ACCESS_KEY_ID = my_AWS_ACCESS_KEY_ID # .csv 파일에 있는 내용을 입력 Access key ID
+AWS_SECRET_ACCESS_KEY = my_AWS_SECRET_ACCESS_KEY # .csv 파일에 있는 내용을 입력 Secret access key
 AWS_REGION = 'ap-northeast-2'
 AWS_STORAGE_BUCKET_NAME = 'kitbooth-img' # 설정한 버킷 이름
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME,AWS_REGION)
