@@ -25,6 +25,6 @@ urlpatterns = [
     re_path(r'redoc', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc-v1'),
     
     path('admin/', admin.site.urls),
-    path('booth', include('ClubBooth.urls')),
-    path('guestbook', include('GuestBook.urls'))
+    path('booth/', include('ClubBooth.urls')),
+    path('guestbook/', include('GuestBook.urls'))
 ]
