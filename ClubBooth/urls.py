@@ -7,12 +7,15 @@ boothcreate = boothcreater.as_view(
     {
         'put' : 'create',
         'get' : 'list',
+        'patch' : 'partial_update',
+        'delete' : 'destroy',
     }
 )
 
 urlpatterns = [
     path('', views.booth_list),
-    path('create/',boothcreate)
+    path('create/',boothcreate),
+    path('destroy/<int:pk>/',boothcreate),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
