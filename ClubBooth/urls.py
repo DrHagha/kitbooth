@@ -7,12 +7,15 @@ boothcreate = boothcreater.as_view(
     {
         'put' : 'create',
         'get' : 'list',
+        'patch' : 'partial_update',
+        'delete' : 'destroy',
     }
 )
 
 urlpatterns = [
     path('', views.booth_list),
-    path('create/',boothcreate)
+    path('create/',boothcreate),
+    path('destroy/<int:pk>/',boothcreate),
 ]
 
 ##전체 정보 조회(http://127.0.0.1:8000/booth/all/)(req: {} -> res : {{id : 1, booth_name : ddd, booth_location : s23}, {...}} )
