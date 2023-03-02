@@ -8,13 +8,13 @@ from .models import Comment
 @api_view(['GET', 'POST'])
 def comment(request):
     if request.method == "GET":
-        comment_list = Comment.objects.all()
+        comment_list = Comment.objects.all().order_by('-create_date')
         
         if comment_list == False:
             return Response(status=404)
         
         else:
-            serializer = CommentSerializer(comment_list, many = True)
+            serializer = CommentSerializer(comment_list, many = True )
             return Response(serializer.data, status=200)
     elif request.method == "POST":
         serializer = CommentCreateSerializer(data=request.data)
