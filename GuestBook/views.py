@@ -17,7 +17,7 @@ def comment(request):
             serializer = CommentSerializer(comment_list, many = True )
             return Response(serializer.data, status=200)
     elif request.method == "POST":
-        serializer = CommentCreateSerializer(data=request.data)
+        serializer = CommentCreateSerializer(data=request.data['data'])
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
