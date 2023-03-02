@@ -1,6 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status,viewsets
 
 from .serializer import CommentSerializer, CommentCreateSerializer
 from .models import Comment
@@ -23,3 +23,6 @@ def comment(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+class CommentDelete(viewsets.ModelViewSet):
+    serializer_class= CommentSerializer
+    queryset=Comment.objects.all()
