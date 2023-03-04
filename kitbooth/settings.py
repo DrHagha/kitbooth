@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['*']
 
 CORS_ORIGIN_ALLOW_ALL = False
 
-CORS_ORIGIN_WHITELIST = ("https://localhost:3000" , "https://localhost:8000", "http://localhost:3000", "http://localhost:8000")
+CORS_ORIGIN_WHITELIST = ("https://localhost:3000" , "https://localhost:8000", "http://localhost:3000", "http://localhost:8000", "http://kit-welcome-party-fe.s3-website.ap-northeast-2.amazonaws.com/")
 
 
 # Application definition
