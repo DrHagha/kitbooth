@@ -26,7 +26,7 @@ SECRET_KEY = my_SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["http://kit-welcome-party-fe.s3-website.ap-northeast-2.amazonaws.com"]
+ALLOWED_HOSTS = ["*"]
 
 CORS_ORIGIN_ALLOW_ALL = False
 
