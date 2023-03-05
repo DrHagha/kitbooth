@@ -24,11 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = my_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True # 부스 작업 후 false로 바꿔야함
 
 ALLOWED_HOSTS = ["*"]
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True # 부스 작업 후 false로 바꿔야함
 
 CORS_ORIGIN_WHITELIST = ("https://localhost:3000" , "https://localhost:8000", "http://localhost:3000", "http://localhost:8000", "http://kit-welcome-party-fe.s3-website.ap-northeast-2.amazonaws.com")
 
