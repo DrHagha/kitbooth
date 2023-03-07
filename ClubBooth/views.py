@@ -7,7 +7,7 @@ from .models import Booth
 @api_view(['GET'])
 def booth_list(request):
     if request.method == 'GET':
-        booth_list = Booth.objects.all()
+        booth_list = Booth.objects.all().order_by('booth_location')
         serializer = BoothDetailSerializer(booth_list, many = True)
         return Response(serializer.data, status=200)
     
