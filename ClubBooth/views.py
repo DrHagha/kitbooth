@@ -25,4 +25,4 @@ def booth_detail(request, pk):
         
 class boothcreater(viewsets.ModelViewSet):
     serializer_class = BoothDetailSerializer
-    queryset= Booth.objects.all()
+    queryset= Booth.objects.all().order_by('booth_location')
