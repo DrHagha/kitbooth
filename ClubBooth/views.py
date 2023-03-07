@@ -1,13 +1,17 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status, viewsets
+
+from django.db.models.functions import Cast
+from django.db.models import IntegerField
+
 from .serializer import BoothDetailSerializer, BoothShortSerializer
 from .models import Booth
 
 @api_view(['GET'])
 def booth_list(request):
     if request.method == 'GET':
-        booth_list = Booth.objects.all().order_by('booth_location')
+        booth_list = Booth.objects.annotate(booth_location_int_cast = Cast('booth_location', output_field=IntegerField()),).order_by('booth_location_int_cast')
         serializer = BoothDetailSerializer(booth_list, many = True)
         return Response(serializer.data, status=200)
     
